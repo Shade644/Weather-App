@@ -34,7 +34,7 @@ class _HomeState extends State<Home> {
       'last': instance.last!,
       'wind': instance.wind!,
       'icon': instance.icon!,
-  });
+  },);
   // setState(() {
   //   temperatureC = instance.temperatureC!;
   //     temperatureF = instance.temperatureF!;

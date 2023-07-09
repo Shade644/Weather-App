@@ -24,20 +24,21 @@ class _LocationState extends State<Location> {
     WeatherWorld(url: 'New York USA',),
 	  ];
 
-    void updateLocation(index) async{
-      WeatherWorld instance = city[index];
-      await instance.getWeather();
 
-    Navigator.pop(context, {
-     'url': instance.url,
+void updateLocation(index) async {
+  WeatherWorld instance = city[index];
+  await instance.getWeather();
+
+  Navigator.pop(context, {
+    'url': instance.url,
     'temperatureC': instance.temperatureC!,
-      'temperatureF': instance.temperatureF!,
-      'name': instance.name!,
-      'last': instance.last!,
-      'wind': instance.wind!,
-      'icon': instance.icon!,
-    });
-    }
+    'temperatureF': instance.temperatureF!,
+    'name': instance.name!,
+    'last': instance.last!,
+    'wind': instance.wind!,
+    'icon': instance.icon!,
+  });
+}
 
   @override
   Widget build(BuildContext context) {
