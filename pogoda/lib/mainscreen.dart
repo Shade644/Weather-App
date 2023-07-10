@@ -26,7 +26,7 @@ void didChangeDependencies() {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[500],
+      backgroundColor: Color.fromARGB(255, 43, 6, 3),
       body: SafeArea(
         child: Container(
           decoration: BoxDecoration(
@@ -36,7 +36,7 @@ void didChangeDependencies() {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(0, 120, 0, 0),
+            padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
             child: Center(
               child: Column(
                 children: <Widget>[
@@ -50,6 +50,7 @@ void didChangeDependencies() {
                     icon: Icon(Icons.edit_location_alt),
                     label: Text('Zmień Lokalizacje'),
                   ),
+                  SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
@@ -63,30 +64,34 @@ void didChangeDependencies() {
                       ),
                     ],
                   ),
+                    SizedBox(height: 5),
                   Text(
                     '${dane['temperatureC']}',
                     style: TextStyle(
-                      fontSize: 40,
+                      fontSize: 50,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text(
-                    '${dane['temperatureF']}',
-                    style: TextStyle(
-                      fontSize: 40,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                   SizedBox(height: 5),
                   Text(
                     '${dane['wind']}',
+                    style: TextStyle(
+                      fontSize: 37,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    
+                    '${dane['humidity']}',
                     style: const TextStyle(
                       fontSize: 30,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                   SizedBox(height: 5),
                   Text(
                     '${dane['last']}',
                     style: TextStyle(
@@ -105,6 +110,13 @@ void didChangeDependencies() {
                     if (result != null) {
                     setState(() {
                       dane['name'] = result['name'];
+                      dane['temperatureF'] = result['temperatureF'];
+                       dane['pressure'] = result['pressure'];
+                        dane['cloud'] = result['cloud'];
+                         dane['winddir'] = result['winddir'];
+                          dane['precip'] = result['precip'];
+                           dane['uv'] = result['uv'];
+                            dane['humidity'] = result['humidity'];
                      });
                        }
                         },

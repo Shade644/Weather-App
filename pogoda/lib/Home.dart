@@ -12,15 +12,7 @@ class Home extends StatefulWidget {
   
 }
 
-class _HomeState extends State<Home> {
-   String temperatureC ='loading';
-   String temperatureF ='loading';
-   String name ='loading';
-    String last ='loading';
-    String wind ='loading';
-     String? icon;
-     String? wpis;
-    
+class _HomeState extends State<Home> {    
 
  void setupWeather() async{
   WeatherWorld instance = WeatherWorld(url:'Krakow Poland',);
@@ -29,11 +21,23 @@ class _HomeState extends State<Home> {
     Navigator.pushReplacementNamed(context, '/main', arguments:{
     'url': instance.url,
     'temperatureC': instance.temperatureC!,
-      'temperatureF': instance.temperatureF!,
       'name': instance.name!,
       'last': instance.last!,
       'wind': instance.wind!,
       'icon': instance.icon!,
+      'humidity': instance.humidity!,
+
+      'temperatureF': instance.temperatureF!,
+      'pressure': instance.pressure!,
+      'cloud': instance.cloud!,
+      'winddir': instance.winddir!,
+      'precip': instance.precip!,
+      'uv': instance.uv!,
+      'windgust': instance.windgust!,
+
+
+
+
   },);
   // setState(() {
   //   temperatureC = instance.temperatureC!;

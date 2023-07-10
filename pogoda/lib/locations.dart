@@ -14,14 +14,23 @@ class _LocationState extends State<Location> {
     List<WeatherWorld> city = [
     WeatherWorld(url: 'Krakow  Poland',),
 	  WeatherWorld(url: 'Warsaw  Poland',),
-	  WeatherWorld(url: 'Katowice Poland',),
-	  WeatherWorld(url: 'Poznan Poland',),
 	  WeatherWorld(url: 'Gdansk Poland',),
 	  WeatherWorld(url: 'Wroclaw Poland',),
-	  WeatherWorld(url: 'Bialystok Poland',),
-	  WeatherWorld(url: 'Zakopane Poland',),
-	  WeatherWorld(url: 'Szczecin Poland',),
-    WeatherWorld(url: 'New York USA',),
+	  WeatherWorld(url: 'Berlin Germany',),
+	  WeatherWorld(url: 'Munich Germany',),
+	  WeatherWorld(url: 'Paris France',),
+	  WeatherWorld(url: 'Amsterdam Netherlands',),
+    WeatherWorld(url: 'Brussels Belgium',),
+    WeatherWorld(url: 'London UK',),
+    WeatherWorld(url: 'Prague Czech',),
+    WeatherWorld(url: 'Stockholm Sweden',),
+    WeatherWorld(url: 'Copenhagen Denmark',),
+    WeatherWorld(url: 'Helsinki Finland',),
+    WeatherWorld(url: 'Zagreb Croatia',),
+    WeatherWorld(url: 'Athens Greece',),
+    WeatherWorld(url: 'Rome Italy',),
+    WeatherWorld(url: 'Madrid Spain',),
+    WeatherWorld(url: 'Lisbon Portugal',),
 	  ];
 
 
@@ -32,17 +41,25 @@ void updateLocation(index) async {
   Navigator.pop(context, {
     'url': instance.url,
     'temperatureC': instance.temperatureC!,
-    'temperatureF': instance.temperatureF!,
     'name': instance.name!,
     'last': instance.last!,
     'wind': instance.wind!,
     'icon': instance.icon!,
+    'humidity': instance.humidity!,
+    'temperatureF': instance.temperatureF!,
+      'pressure': instance.pressure!,
+      'cloud': instance.cloud!,
+      'winddir': instance.winddir!,
+      'precip': instance.precip!,
+      'uv': instance.uv!,
+      'windgust': instance.windgust!,
   });
 }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       backgroundColor: Color.fromARGB(255, 43, 6, 3),
       body: ListView.builder(
         itemCount: city.length,
         itemBuilder: (context, index){
@@ -50,15 +67,14 @@ void updateLocation(index) async {
             child: ListTile(
               onTap:() {
               updateLocation(index);
-              },
+              }, 
                title: Text(city[index].url),
+               tileColor: Color.fromARGB(255, 64, 156, 67),
             ),
           );
         },
         
         ),
-
-
     );
   }
 }
