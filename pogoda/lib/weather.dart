@@ -1,4 +1,3 @@
-import 'package:pogoda/Home.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
 
@@ -68,12 +67,6 @@ WeatherWorld({required this.url,});
              Map<String, dynamic> locationData = dataa['location'];
             String namecity = locationData['name'];
             name = namecity; 
-         }
-
-
-             //  Map<String, dynamic> conditionData = currentData['condition'];
-            // String iconn = conditionData['text'];
-            //  icon = iconn;
-            // // print(icon);   
+         } 
     }
  }

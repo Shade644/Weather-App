@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pogoda/weather.dart';
-import 'dart:convert';
+
 
 class Location extends StatefulWidget {
    const Location({super.key});
@@ -38,6 +38,7 @@ void updateLocation(index) async {
   WeatherWorld instance = city[index];
   await instance.getWeather();
 
+  // ignore: use_build_context_synchronously
   Navigator.pop(context, {
     'url': instance.url,
     'temperatureC': instance.temperatureC!,
@@ -59,7 +60,7 @@ void updateLocation(index) async {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: Color.fromARGB(255, 43, 6, 3),
+       backgroundColor: const Color.fromARGB(255, 43, 6, 3),
       body: ListView.builder(
         itemCount: city.length,
         itemBuilder: (context, index){
@@ -69,7 +70,7 @@ void updateLocation(index) async {
               updateLocation(index);
               }, 
                title: Text(city[index].url),
-               tileColor: Color.fromARGB(255, 64, 156, 67),
+               tileColor: const Color.fromARGB(255, 64, 156, 67),
             ),
           );
         },

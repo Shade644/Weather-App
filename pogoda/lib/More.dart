@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 class MoreInfo extends StatelessWidget {
+  const MoreInfo({super.key});
+
   @override
   Widget build(BuildContext context) {
   final Map<String, dynamic>? data = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
 
-
-    String name = data?['name'] ?? '';
+    //String name = data?['name'] ?? '';
     String temperatureF = data?['temperatureF'] ?? '';
    String pressure = data?['pressure'] ?? '';
    String cloud = data?['cloud'] ?? '';
@@ -17,14 +18,14 @@ class MoreInfo extends StatelessWidget {
     
     return Scaffold(
       appBar: AppBar(
-        title: Text('Więcej Danych'),
-        backgroundColor: Color.fromARGB(255, 43, 6, 3),
+        title: const Text('Więcej Danych'),
+        backgroundColor: const Color.fromARGB(255, 43, 6, 3),
         elevation: 0.5,
       ),
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/background.jpg'),
             fit:BoxFit.cover,
@@ -37,61 +38,61 @@ class MoreInfo extends StatelessWidget {
                       children: <Widget>[
                         Text(
                           precip,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 20,
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                         SizedBox(height: 10),
+                         const SizedBox(height: 10),
                     Text(
                        cloud,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                     SizedBox(height: 10),
+                     const SizedBox(height: 10),
                     Text(
                       pressure,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                     SizedBox(height: 10),
+                     const SizedBox(height: 10),
                     Text(
                       winddir,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                     SizedBox(height: 10),
+                     const SizedBox(height: 10),
                     Text(
                       windgust,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                     SizedBox(height: 10),
+                     const SizedBox(height: 10),
                     Text(
                       uv,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                     SizedBox(height: 10),
+                     const SizedBox(height: 10),
                      Text(
                       temperatureF,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,

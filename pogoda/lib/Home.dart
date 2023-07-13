@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pogoda/weather.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 
 
@@ -39,15 +40,6 @@ class _HomeState extends State<Home> {
 
 
   },);
-  // setState(() {
-  //   temperatureC = instance.temperatureC!;
-  //     temperatureF = instance.temperatureF!;
-  //     name = instance.name!;
-  //     last= instance.last!;
-  //     wind = instance.wind!;
-
-  // });
-  
  }
  @override
   void initState(){
@@ -59,10 +51,12 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue[500],
-      
-      body: Padding(
-        padding: const EdgeInsets.all(50),
-
-      ));
+    body: Center(
+      child: LoadingAnimationWidget.staggeredDotsWave(
+        color: Colors.white,
+        size: 200,
+      ),
+    ),
+      );
   }
 }

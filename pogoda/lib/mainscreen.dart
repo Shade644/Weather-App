@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pogoda/weather.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -26,10 +25,10 @@ void didChangeDependencies() {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 43, 6, 3),
+      backgroundColor: const Color.fromARGB(255, 43, 6, 3),
       body: SafeArea(
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/background.jpg'),
               fit: BoxFit.cover,
@@ -47,16 +46,16 @@ void didChangeDependencies() {
                         dane = result ?? {};
                       });
                     },
-                    icon: Icon(Icons.edit_location_alt),
-                    label: Text('Zmień Lokalizacje'),
+                    icon: const Icon(Icons.edit_location_alt),
+                    label: const Text('Zmień Lokalizacje'),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
                         dane['name'],
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 60,
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -64,19 +63,19 @@ void didChangeDependencies() {
                       ),
                     ],
                   ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                   Text(
                     '${dane['temperatureC']}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 50,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                   SizedBox(height: 5),
+                   const SizedBox(height: 5),
                   Text(
                     '${dane['wind']}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 37,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -91,10 +90,10 @@ void didChangeDependencies() {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                   SizedBox(height: 5),
+                   const SizedBox(height: 5),
                   Text(
                     '${dane['last']}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 15,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -120,8 +119,8 @@ void didChangeDependencies() {
                      });
                        }
                         },
-                    icon: Icon(Icons.visibility_sharp),
-                    label: Text('Więcej Danych'),
+                    icon: const Icon(Icons.visibility_sharp),
+                    label: const Text('Więcej Danych'),
                   ),
                 ],
               ),
